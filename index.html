@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembelajaran Aksara Jawa</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Crimson+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Javanese Text';
+      src: local('Javanese Text'), local('Noto Sans Javanese');
+    }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Crimson Pro', serif; }
+    .javanese-text { font-family: 'Javanese Text', 'Noto Sans Javanese', serif; }
+    
+    .batik-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B4513' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+    }
+    
+    .gradient-border {
+      background: linear-gradient(135deg, #8B4513 0%, #D4A574 50%, #8B4513 100%);
+      padding: 3px;
+    }
+    
+    .scroll-animate {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .video-card {
+      transition: all 0.3s ease;
+    }
+    .video-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .aksara-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'jawa-brown': '#8B4513',
+            'jawa-gold': '#D4A574',
+            'jawa-cream': '#FDF8F3',
+            'jawa-dark': '#3D2314',
+            'jawa-accent': '#C17F59'
+          }
+        }
+      }
+    }
+  </script>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-jawa-cream text-jawa-dark">
+  <div id="app-container" class="w-full min-h-full overflow-auto batik-pattern"><!-- Header -->
+   <header class="relative overflow-hidden" style="background: linear-gradient(135deg, #3D2314 0%, #8B4513 50%, #3D2314 100%);">
+    <div class="absolute inset-0 opacity-10">
+     <svg class="w-full h-full" viewbox="0 0 100 100" preserveaspectratio="none"><pattern id="waves" x="0" y="0" width="20" height="20" patternunits="userSpaceOnUse">
+       <path d="M0 10 Q5 0 10 10 T20 10" stroke="#D4A574" fill="none" stroke-width="0.5" />
+      </pattern> <rect width="100%" height="100%" fill="url(#waves)" />
+     </svg>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6 py-16 text-center">
+     <div class="mb-4"><span class="javanese-text text-jawa-gold text-4xl">ꦲꦏ꧀ꦱꦫꦗꦮ</span>
+     </div>
+     <h1 id="site-title" class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Pembelajaran Aksara Jawa</h1>
+     <div class="w-32 h-1 bg-jawa-gold mx-auto mb-6 rounded-full"></div>
+     <p id="school-name" class="text-jawa-gold text-xl md:text-2xl font-display">SMA Negeri Taruna Nala Jawa Timur</p>
+     <p id="teacher-name" class="text-white/80 mt-2 text-lg">Pengampu: Guru Bahasa Jawa</p>
+    </div><!-- Decorative bottom wave -->
+    <svg class="absolute bottom-0 w-full" viewbox="0 0 1200 120" preserveaspectratio="none" style="height: 60px;"><path d="M0,60 C300,120 600,0 1200,60 L1200,120 L0,120 Z" fill="#FDF8F3" />
+    </svg>
+   </header><!-- Welcome Section -->
+   <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-jawa-brown scroll-animate" style="animation-delay: 0.1s;">
+     <div class="flex items-start gap-4">
+      <div class="w-16 h-16 bg-jawa-brown/10 rounded-full flex items-center justify-center flex-shrink-0">
+       <svg class="w-8 h-8 text-jawa-brown" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+       </svg>
+      </div>
+      <div>
+       <h2 class="font-display text-2xl font-bold text-jawa-dark mb-3">Sugeng Rawuh! 🙏</h2>
+       <p id="welcome-text" class="text-lg text-jawa-dark/80 leading-relaxed">Selamat datang di portal pembelajaran Aksara Jawa. Di sini, kalian akan mempelajari warisan budaya leluhur yang tak ternilai harganya. Aksara Jawa bukan sekadar huruf, melainkan jendela menuju kearifan dan filosofi hidup masyarakat Jawa yang telah diwariskan turun-temurun.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Materi Section -->
+   <section class="max-w-6xl mx-auto px-6 py-8">
+    <div class="text-center mb-12 scroll-animate" style="animation-delay: 0.2s;"><span class="javanese-text text-jawa-brown text-2xl">ꦮꦸꦭꦁꦔꦤ꧀</span>
+     <h2 class="font-display text-3xl md:text-4xl font-bold text-jawa-dark mt-2">Daftar Materi Pembelajaran</h2>
+     <p class="text-jawa-dark/70 mt-3 text-lg">Pilih materi yang ingin dipelajari</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- 1. Paugeran Aksara Jawa -->
+     <div class="scroll-animate" style="animation-delay: 0.3s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          1
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Paugeran Aksara Jawa</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Paugeran atau aturan dasar penulisan aksara Jawa merupakan fondasi utama yang harus dipahami. Meliputi tata cara penulisan, arah penulisan dari kiri ke kanan, posisi aksara pada garis, serta kaidah-kaidah penulisan yang benar sesuai dengan pakem tradisional.</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-brown/60 mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg><span>Materi Dasar</span>
+        </div><a href="#paugeran" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 2. Aksara Legena dan Pasangan -->
+     <div class="scroll-animate" style="animation-delay: 0.4s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          2
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Aksara Legena &amp; Pasangan</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Aksara Legena adalah 20 huruf dasar Jawa (ꦲ ꦤ ꦕ ꦫ ꦏ...) yang masing-masing berbunyi vokal 'a'. Pasangan adalah bentuk aksara yang ditulis di bawah atau di samping aksara lain untuk mematikan konsonan akhir aksara sebelumnya.</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-brown/60 mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg><span>Materi Inti</span>
+        </div><a href="#legena-pasangan" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 3. Sandangan -->
+     <div class="scroll-animate" style="animation-delay: 0.5s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          3
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Sandangan</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Sandangan adalah tanda diakritik yang mengubah bunyi vokal aksara legena. Terdiri dari sandangan swara (wulu, suku, pepet, taling, taling tarung), sandangan panyigeging wanda (wignyan, layar, cecak), dan sandangan wyanjana (cakra, keret, pengkal).</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-brown/60 mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg><span>Materi Inti</span>
+        </div><a href="#sandangan" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 4. Aksara Murda -->
+     <div class="scroll-animate" style="animation-delay: 0.6s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          4
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Aksara Murda</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Aksara Murda adalah aksara kapital dalam sistem penulisan Jawa. Digunakan untuk menulis nama diri, gelar kehormatan, nama tempat, dan kata-kata yang perlu dihormati. Terdapat 8 aksara murda: Na, Ka, Ta, Sa, Pa, Nya, Ga, Ba.</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-gold mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+         </svg><span>Materi Lanjutan</span>
+        </div><a href="#murda" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 5. Aksara Rekan -->
+     <div class="scroll-animate" style="animation-delay: 0.7s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          5
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Aksara Rekan</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Aksara Rekan adalah aksara tambahan untuk menulis bunyi dari bahasa asing (terutama Arab). Dibentuk dengan menambahkan tanda cecak telu (꦳) pada aksara tertentu. Contoh: kha (ꦏ꦳), dza (ꦢ꦳), fa/va (ꦥ꦳), za (ꦗ꦳), gha (ꦒ꦳).</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-gold mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+         </svg><span>Materi Lanjutan</span>
+        </div><a href="#rekan" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 6. Aksara Swara -->
+     <div class="scroll-animate" style="animation-delay: 0.8s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          6
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Aksara Swara</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Aksara Swara adalah aksara vokal mandiri untuk menulis bunyi vokal di awal kata atau vokal yang berdiri sendiri. Terdiri dari 5 aksara: A (ꦄ), I (ꦆ), U (ꦈ), E (ꦌ), O (ꦎ). Digunakan terutama untuk kata serapan atau nama asing.</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-gold mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+         </svg><span>Materi Lanjutan</span>
+        </div><a href="#swara" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div><!-- 7. Aksara Angka -->
+     <div class="scroll-animate md:col-start-2 lg:col-start-2" style="animation-delay: 0.9s;">
+      <div class="gradient-border rounded-2xl card-hover">
+       <div class="bg-white rounded-xl p-6 h-full">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-jawa-brown to-jawa-accent rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          7
+         </div>
+         <h3 class="font-display text-xl font-bold text-jawa-dark">Aksara Angka</h3>
+        </div>
+        <p class="text-jawa-dark/70 mb-4 leading-relaxed">Aksara Angka Jawa digunakan untuk menulis bilangan. Terdiri dari angka 0-9: ꧐ ꧑ ꧒ ꧓ ꧔ ꧕ ꧖ ꧗ ꧘ ꧙. Penulisan angka diapit dengan tanda pada pangkat (꧇) di awal dan akhir. Sistem bilangan sama dengan sistem desimal.</p>
+        <div class="flex items-center gap-2 text-sm text-jawa-gold mb-4">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+         </svg><span>Materi Lanjutan</span>
+        </div><a href="#angka" class="block w-full py-3 bg-jawa-brown text-white text-center rounded-xl font-medium hover:bg-jawa-dark transition-colors"> Pelajari Materi → </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Video Gallery Section -->
+   <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="text-center mb-10 scroll-animate" style="animation-delay: 1s;"><span class="javanese-text text-jawa-brown text-2xl">ꦒꦭꦺꦫꦶꦮꦶꦢꦾꦺꦪꦺꦴ</span>
+     <h2 class="font-display text-3xl md:text-4xl font-bold text-jawa-dark mt-2">Galeri Video Pembelajaran</h2>
+     <p class="text-jawa-dark/70 mt-3 text-lg">Klik video untuk membuka di YouTube</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-animate" style="animation-delay: 1.1s;"><!-- Video Management -->
+     <div class="mb-8 p-4 bg-jawa-cream rounded-xl">
+      <h3 class="font-display text-lg font-bold text-jawa-dark mb-4">📹 Tambah Video Baru</h3>
+      <div class="flex flex-col sm:flex-row gap-3"><input type="text" id="video-title-input" placeholder="Judul Video" class="flex-1 px-4 py-3 border-2 border-jawa-brown/20 rounded-xl focus:border-jawa-brown focus:outline-none transition-colors"> <input type="text" id="video-url-input" placeholder="Link YouTube (contoh: https://www.youtube.com/watch?v=...)" class="flex-[2] px-4 py-3 border-2 border-jawa-brown/20 rounded-xl focus:border-jawa-brown focus:outline-none transition-colors"> <button id="add-video-btn" class="px-6 py-3 bg-jawa-brown text-white rounded-xl font-medium hover:bg-jawa-dark transition-colors flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg> Tambah </button>
+      </div>
+     </div><!-- Video Grid -->
+     <div id="video-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Videos will be dynamically added here -->
+     </div><!-- Empty State -->
+     <div id="empty-video-state" class="text-center py-12">
+      <div class="w-20 h-20 bg-jawa-brown/10 rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg class="w-10 h-10 text-jawa-brown/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+       </svg>
+      </div>
+      <p class="text-jawa-dark/50 text-lg">Belum ada video. Tambahkan video pembelajaran di atas.</p>
+     </div>
+    </div>
+   </section><!-- Quick Links Section -->
+   <section class="max-w-6xl mx-auto px-6 py-8 mb-12">
+    <div class="bg-gradient-to-r from-jawa-dark via-jawa-brown to-jawa-dark rounded-2xl p-8 text-center scroll-animate" style="animation-delay: 1.2s;">
+     <h3 class="font-display text-2xl font-bold text-white mb-6">Pintasan Cepat ke Materi</h3>
+     <div class="flex flex-wrap justify-center gap-3"><a href="#paugeran" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Paugeran </a> <a href="#legena-pasangan" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Legena &amp; Pasangan </a> <a href="#sandangan" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Sandangan </a> <a href="#murda" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Murda </a> <a href="#rekan" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Rekan </a> <a href="#swara" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Swara </a> <a href="#angka" class="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors border border-white/20"> Angka </a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-jawa-dark text-white py-8">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+     <div class="javanese-text text-jawa-gold text-2xl mb-3">
+      ꦤꦸꦮꦸꦤ꧀
+     </div>
+     <p class="text-white/70">© 2024 Pembelajaran Aksara Jawa - SMA Negeri Taruna Nala Jawa Timur</p>
+     <p class="text-white/50 text-sm mt-2">Ngelmu iku kelakone kanthi laku</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_title: 'Pembelajaran Aksara Jawa',
+      teacher_name: 'Pengampu: Guru Bahasa Jawa',
+      school_name: 'SMA Negeri Taruna Nala Jawa Timur',
+      welcome_text: 'Selamat datang di portal pembelajaran Aksara Jawa. Di sini, kalian akan mempelajari warisan budaya leluhur yang tak ternilai harganya. Aksara Jawa bukan sekadar huruf, melainkan jendela menuju kearifan dan filosofi hidup masyarakat Jawa yang telah diwariskan turun-temurun.',
+      background_color: '#FDF8F3',
+      header_color: '#3D2314',
+      text_color: '#3D2314',
+      accent_color: '#8B4513',
+      card_color: '#FFFFFF'
+    };
+
+    // Video storage
+    let videos = [];
+
+    // Extract YouTube video ID from URL
+    function extractYouTubeId(url) {
+      const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+        /youtube\.com\/shorts\/([^&\n?#]+)/
+      ];
+      for (const pattern of patterns) {
+        const match = url.match(pattern);
+        if (match) return match[1];
+      }
+      return null;
+    }
+
+    // Generate YouTube thumbnail URL
+    function getYouTubeThumbnail(videoId) {
+      return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    }
+
+    // Render video cards
+    function renderVideos() {
+      const grid = document.getElementById('video-grid');
+      const emptyState = document.getElementById('empty-video-state');
+      
+      if (videos.length === 0) {
+        grid.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+      
+      emptyState.style.display = 'none';
+      grid.innerHTML = videos.map((video, index) => `
+        <div class="video-card group relative bg-jawa-cream rounded-xl overflow-hidden shadow-md">
+          <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="block">
+            <div class="relative aspect-video bg-jawa-dark/10">
+              <img 
+                src="${video.thumbnail}" 
+                alt="${video.title}"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="absolute inset-0 items-center justify-center bg-jawa-dark/20" style="display: none;">
+                <svg class="w-12 h-12 text-white/50" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                </svg>
+              </div>
+              <!-- Play button overlay -->
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                  <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-jawa-dark group-hover:text-jawa-brown transition-colors line-clamp-2">${video.title}</h4>
+              <p class="text-sm text-jawa-dark/50 mt-1 flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816z"/>
+                </svg>
+                YouTube
+              </p>
+            </div>
+          </a>
+          <button 
+            onclick="removeVideo(${index})" 
+            class="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:bg-red-600"
+            title="Hapus video"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Add video function
+    function addVideo() {
+      const titleInput = document.getElementById('video-title-input');
+      const urlInput = document.getElementById('video-url-input');
+      
+      const title = titleInput.value.trim();
+      const url = urlInput.value.trim();
+      
+      if (!title) {
+        titleInput.focus();
+        titleInput.classList.add('border-red-500');
+        setTimeout(() => titleInput.classList.remove('border-red-500'), 2000);
+        return;
+      }
+      
+      if (!url) {
+        urlInput.focus();
+        urlInput.classList.add('border-red-500');
+        setTimeout(() => urlInput.classList.remove('border-red-500'), 2000);
+        return;
+      }
+      
+      const videoId = extractYouTubeId(url);
+      if (!videoId) {
+        urlInput.classList.add('border-red-500');
+        setTimeout(() => urlInput.classList.remove('border-red-500'), 2000);
+        return;
+      }
+      
+      videos.push({
+        title: title,
+        url: url,
+        videoId: videoId,
+        thumbnail: getYouTubeThumbnail(videoId)
+      });
+      
+      titleInput.value = '';
+      urlInput.value = '';
+      renderVideos();
+    }
+
+    // Remove video function
+    function removeVideo(index) {
+      videos.splice(index, 1);
+      renderVideos();
+    }
+
+    // Element SDK configuration change handler
+    async function onConfigChange(config) {
+      const siteTitle = document.getElementById('site-title');
+      const teacherName = document.getElementById('teacher-name');
+      const schoolName = document.getElementById('school-name');
+      const welcomeText = document.getElementById('welcome-text');
+      
+      if (siteTitle) siteTitle.textContent = config.site_title || defaultConfig.site_title;
+      if (teacherName) teacherName.textContent = config.teacher_name || defaultConfig.teacher_name;
+      if (schoolName) schoolName.textContent = config.school_name || defaultConfig.school_name;
+      if (welcomeText) welcomeText.textContent = config.welcome_text || defaultConfig.welcome_text;
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => window.elementSdk.setConfig({ background_color: value })
+            },
+            {
+              get: () => config.header_color || defaultConfig.header_color,
+              set: (value) => window.elementSdk.setConfig({ header_color: value })
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => window.elementSdk.setConfig({ text_color: value })
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => window.elementSdk.setConfig({ accent_color: value })
+            },
+            {
+              get: () => config.card_color || defaultConfig.card_color,
+              set: (value) => window.elementSdk.setConfig({ card_color: value })
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['site_title', config.site_title || defaultConfig.site_title],
+          ['teacher_name', config.teacher_name || defaultConfig.teacher_name],
+          ['school_name', config.school_name || defaultConfig.school_name],
+          ['welcome_text', config.welcome_text || defaultConfig.welcome_text]
+        ])
+      });
+    }
+
+    // Event listeners
+    document.getElementById('add-video-btn').addEventListener('click', addVideo);
+    
+    // Allow Enter key to add video
+    document.getElementById('video-url-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addVideo();
+    });
+
+    // Initialize with sample videos
+    videos = [
+      {
+        title: 'Pengenalan Aksara Jawa Dasar',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoId: 'dQw4w9WgXcQ',
+        thumbnail: getYouTubeThumbnail('dQw4w9WgXcQ')
+      },
+      {
+        title: 'Cara Menulis Aksara Legena',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoId: 'dQw4w9WgXcQ',
+        thumbnail: getYouTubeThumbnail('dQw4w9WgXcQ')
+      },
+      {
+        title: 'Belajar Sandangan Swara',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoId: 'dQw4w9WgXcQ',
+        thumbnail: getYouTubeThumbnail('dQw4w9WgXcQ')
+      }
+    ];
+    renderVideos();
+
+    // Animate elements on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9dafc35250e55ffd',t:'MTc3MzI4NjY3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
